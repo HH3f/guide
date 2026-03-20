@@ -1,0 +1,46 @@
+仓库创建者：
+Step1:
+	在自己的github 账号创建一个新的仓库，确认项目权限，名字，编程语言，许可证，md等配置
+
+Step2:
+	git init #本地初始化 git
+	git remote add origin your depository # 建立仓库连接
+	在 pycharm 连接仓库分支（master）
+	git branch -m master main # 切换到 main 分支
+	git remote set-url origin your ssh url # 更换远程地址为 ssh
+
+	git clone https://github.com/OpenHands/OpenHands.git reference 克隆到refrence目录
+
+
+Step3:
+	git pull origin main # 拉取仓库文件（初始生成的 .gitignore .md 许可证等文件）
+	修改 .gitignore 文件，避免由不同操作系统产生的 idea/ .DS_Store 文件，或者不想上传的文件
+
+	# 注：可直接修改 gitignore 文件后直接运行 git add .
+	修改 README.md 文件
+	git add . # 加载所有允许的本地文件
+	git commit -m “提交新代码”
+	git push origin main
+
+其他cmd：
+	git status # 检查缓存区的文件
+	git add -u # 旧状态刷新（删除已缓存的本地文件记录）
+	git reset # 撤销缓存区
+	git fetch origin
+	git restore --staged your file #取消暂存
+	git pull origin main —rebase #
+	git config --global http.postBuffer 524288000 # 扩大内存（大文件传输）
+	ssh-keygen -t ed25519 -C "your_email@example.com" # 生成公钥，用于 ssh 地址
+	cat ~/.ssh/id_ed25519.pub # 复制公钥
+	git push -u origin main # 适用于第一次推送，可以跟踪当前的分支
+	git rm “../youre file path” # 删除文件
+	git rm --cached  # 删除git文件保留本地
+
+
+分支协作：
+	1,仓库连接（仓库创建者连接）
+	1,git checkout -b your branch name # 创建分支
+	2,git add . -> git commit “” ->git push origin your branch name
+	3,申请 github 网页端请求分支合并
+
+
